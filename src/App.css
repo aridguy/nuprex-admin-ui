@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Circular Std";
+  src: url("/src/fonts/circular-std-medium-500.ttf") format("ttf"),
+    url("/src/fonts/circular-std-medium-500.ttf") format("woff");
+  font-weight: 900;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* UTILITIES STARTS FROM HERE */
+.brand{
+  color: #014e9a;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.brand-background{
+  background-color: #4169E1;
 }
+.cursor{
+  cursor: pointer;
+}
+.full-width{
+  width: 100%;
+}
+/* UTILITIES ENDS HERE */
 
-.App-header {
-  background-color: #282c34;
+/* PREDEFINED FONT TYPE FOR THE APPLICATION */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+p,
+b,
+a,
+i,
+li,
+select {
+  font-family: "Circular Std";
+}
+/* PREDEFINED FONT TYPE FOR THE APPLICATION ENDS HERE */
+
+
+/* THE ONBOARDING STARTS SCREEN */
+.onboarding_bg{
+  background-image: url("/src/assets/login_image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
+/* THE ONBOARDING ENDS SCREEN */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
