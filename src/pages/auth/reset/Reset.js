@@ -313,6 +313,4 @@ export default Reset;
 //   />
 // </p>;
 
-<button className="full-width btn btn-primary brand-background text-white btn-lg">
-  Submit
-</button>;
+
