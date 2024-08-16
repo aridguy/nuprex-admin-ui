@@ -285,7 +285,7 @@ const Reset = () => {
                             }}
                             className="mt-4 full-width btn btn-primary brand-background text-white btn-lg"
                           >
-                            Submit
+                            Login
                           </button>
                         </div>
                       </div>

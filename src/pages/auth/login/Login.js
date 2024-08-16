@@ -4,6 +4,7 @@ import "../../../App.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   // innitiating animation
@@ -11,6 +12,8 @@ const Login = () => {
     AOS.init({});
   }, []);
   // default states
+
+  const Navigate = useNavigate("/")
 
   return (
     <div>
@@ -67,7 +70,7 @@ const Login = () => {
                             <input type="checkbox" /> Remember Me
                           </small>
                           <small onClick={() => {
-                            window.location.href = "/reset";
+                            Navigate("/reset")
                           }} className="brand cursor float-end">
                             Forgot Password?
                           </small>
