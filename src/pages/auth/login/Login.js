@@ -13,7 +13,7 @@ const Login = () => {
   }, []);
   // default states
 
-  const Navigate = useNavigate("/")
+  const Navigate = useNavigate("/");
 
   return (
     <div>
@@ -69,14 +69,22 @@ const Login = () => {
                           <small className="">
                             <input type="checkbox" /> Remember Me
                           </small>
-                          <small onClick={() => {
-                            Navigate("/reset")
-                          }} className="brand cursor float-end">
+                          <small
+                            onClick={() => {
+                              Navigate("/reset");
+                            }}
+                            className="brand cursor float-end"
+                          >
                             Forgot Password?
                           </small>
                         </div>
                         <div className="mt-3">
-                          <button className="full-width btn btn-primary brand-background text-white btn-lg">
+                          <button
+                            onClick={() => {
+                              Navigate("/dashboard/home");
+                            }}
+                            className="full-width btn btn-primary brand-background text-white btn-lg"
+                          >
                             Login
                           </button>
                         </div>

@@ -13,11 +13,23 @@
 .brand-background{
   background-color: #4169E1;
 }
+.dashboard-bg{
+  background-color: #effdffe3;
+}
+.sidenav-bg{
+  background-color: #002699;
+}
+.sidenav-hover-color{
+  background-color: #FF6600;
+}
 .cursor{
   cursor: pointer;
 }
 .full-width{
   width: 100%;
+}
+.full-height{
+  min-height: 100vh;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -60,3 +72,25 @@ select {
 }
 /* THE ONBOARDING ENDS SCREEN */
 
+
+/* NAVBAR */
+.navbar{
+  height: 5.1em;
+}
+.searchbox{
+  border: none;
+  outline: none;
+  background-color: #F0F2FA;
+  width: 200px;
+
+}
+.search_wrap{
+  background-color: #F0F2FA;
+  padding: 0.6em;
+  border-radius: 5px;
+  width: 284px;
+}
+.notification{
+  font-size: 25px;
+  margin-top: 5px;
+}
