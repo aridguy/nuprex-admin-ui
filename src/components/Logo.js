@@ -19,7 +19,7 @@ const Logo = ({ variant = "default" }) => {
   return (
     <div>
       <img
-        className=""
+        className="cursor"
         width="140"
         src={selectedLogo}
         alt="logo"

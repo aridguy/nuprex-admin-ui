@@ -7,38 +7,39 @@
 }
 
 /* UTILITIES STARTS FROM HERE */
-.brand{
+.brand {
   color: #014e9a;
 }
-.brand-background{
-  background-color: #4169E1;
+.brand-background {
+  background-color: #4169e1;
 }
-.dashboard-bg{
+.dashboard-bg {
   background-color: #effdffe3;
 }
-.sidenav-bg{
+.sidenav-bg {
   background-color: #002699;
+  position: fixed;
+  width: 16.6%;
 }
-.sidenav-hover-color{
-  background-color: #FF6600;
+.sidenav-hover-color {
+  background-color: #ff6600;
 }
-.cursor{
+.cursor {
   cursor: pointer;
 }
-.full-width{
+.full-width {
   width: 100%;
 }
-.full-height{
+.full-height {
   min-height: 100vh;
 }
 
 /* Chrome, Safari, Edge, Opera */
 .input-number[type="number"]::-webkit-outer-spin-button,
 .input-number[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
-
 
 /* UTILITIES ENDS HERE */
 
@@ -60,9 +61,8 @@ select {
 }
 /* PREDEFINED FONT TYPE FOR THE APPLICATION ENDS HERE */
 
-
 /* THE ONBOARDING STARTS SCREEN */
-.onboarding_bg{
+.onboarding_bg {
   background-image: url("/src/assets/login_image.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,25 +72,104 @@ select {
 }
 /* THE ONBOARDING ENDS SCREEN */
 
-
 /* NAVBAR */
-.navbar{
+.navbar {
   height: 5.1em;
+  /* position: fixed; */
 }
-.searchbox{
+.searchbox {
   border: none;
   outline: none;
-  background-color: #F0F2FA;
-  width: 200px;
-
+  background-color: #f0f2fa;
+  width: 240px;
 }
-.search_wrap{
-  background-color: #F0F2FA;
+.search_wrap {
+  background-color: #f0f2fa;
   padding: 0.6em;
   border-radius: 5px;
   width: 284px;
 }
-.notification{
+.notification {
   font-size: 25px;
   margin-top: 5px;
+}
+
+/* DASBOARD STYLES STARTS FROM HERE */
+.dashboard_route_hover:hover,
+.dashboard_route_hover:focus {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 102, 0, 1) 0%,
+    rgba(255, 102, 0, 1) 60%,
+    rgba(0, 38, 153, 1) 100%
+  );
+  border-left: 3px solid white;
+}
+.logout_toggler{
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
+  width: 166px;
+  height: 90px;
+  border-radius: 5px;
+  right: 1em;
+  /* top: 2.7em; */
+}
+.move-profile{
+  position: relative;
+  top: 8px;
+}
+.move-logout{
+  position: relative;
+  bottom: 11px;
+}
+.leads{
+  position: relative;
+  top: 7px;
+}
+/* DASBOARD STYLES ENDS HERE */
+.cards {
+  /* height: 190px;
+  width: 100%; */
+  border-radius: 8px;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
+  background: white;
+  padding: 2.7em;
+  z-index: 0;
+}
+.backAddRiderBtn{
+  background-color: rgba(0, 0, 0, 0.11);
+  padding: 5px;
+  border-radius: 50px;
+}
+/* SIDEBAR */
+
+/* SIDEBAR ENDS */
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #E0F7E9; /* Light green background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  color: #28A745; /* Green color */
+  font-size: 50px;
+}
+
+.rider_admin_btn{
+  width: 182px;
+  height: 47px;
+  border-radius: 4px;
+
+}
+
+.riders_form_bg{
+  background-color: white;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
+  min-height: 75vh;
 }
