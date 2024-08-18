@@ -6,6 +6,7 @@ import { GoPlus } from "react-icons/go";
 import { IoMdArrowBack } from "react-icons/io";
 import Aos from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
   // innitiating animation
@@ -16,28 +17,40 @@ const Dashboard = () => {
   const [dashboardHome, setDashboardHome] = useState(true);
   const [dashboardRider, setDashboardRider] = useState(false);
 
-
-    // THE RIDERS SCREEN RIDERS CODE GENERATE
+  // THE RIDERS SCREEN RIDERS CODE GENERATE
   const [riderCode, setRiderCode] = useState("");
   const [buttonText, setButtonText] = useState("Generate Code");
 
-  const generateCode = () => {
-    const randomCode = Math.floor(1000000 + Math.random() * 9000000);
-    const generatedCode = `RD-${randomCode}`;
-    setRiderCode(generatedCode);
-    setButtonText("Submit");
+  const generateCode = (e) => {
+    e.preventDefault();
+    if (buttonText === "Generate Code") {
+      // Generate code and update state
+      const randomCode = Math.floor(1000000 + Math.random() * 9000000);
+      const generatedCode = `RD-${randomCode}`;
+      setRiderCode(generatedCode);
+      setButtonText("Submit");
+    } else if (buttonText === "Submit") {
+      // Trigger the SweetAlert2 modal
+      Swal.fire({
+        title: "Good job!",
+        html: "You have successfully added <br /> Kehinde Ojapa as a Rider!",
+        icon: "success",
+      });
+      // Optionally reset the button text or perform other actions
+      // setButtonText('Generate Code');
+    }
   };
-// go back to dashboard
-  const backToDashboard =() =>{
+  // go back to dashboard
+  const backToDashboard = () => {
     setDashboardHome(true);
     setDashboardRider(false);
-  }
+  };
   // open create new rider
   const openCreateRider = () => {
     setDashboardHome(false);
     setDashboardRider(true);
-   }
-  
+  };
+
   return (
     <div>
       <div className="container-fluid">
@@ -132,7 +145,10 @@ const Dashboard = () => {
                 </div>
                 <div className="row mt-3">
                   <div>
-                    <button onClick={openCreateRider} className="brand-background border text-white rider_admin_btn">
+                    <button
+                      onClick={openCreateRider}
+                      className="brand-background border text-white rider_admin_btn"
+                    >
                       <GoPlus />
                       Add a Rider
                     </button>
@@ -152,14 +168,21 @@ const Dashboard = () => {
                   <div className="col-md-12">
                     <div>
                       <small>Add a Rider</small>
-                      <small onClick={backToDashboard} className="float-end cursor backAddRiderBtn">
+                      <small
+                        onClick={backToDashboard}
+                        className="float-end cursor backAddRiderBtn"
+                      >
                         <IoMdArrowBack /> Back
                       </small>
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="riders_form_bg mt-2">
-                      <div className="form_box" data-aos="fade-right" data-aos-delay="600">
+                      <div
+                        className="form_box"
+                        data-aos="fade-right"
+                        data-aos-delay="600"
+                      >
                         <form className="">
                           <div className="container">
                             <div className="row">
@@ -187,7 +210,7 @@ const Dashboard = () => {
                                       Choose gender
                                     </option>
                                     <option value="Male">Male</option>
-                                    <option value="Female">Male</option>
+                                    <option value="Female">Female</option>
                                   </select>
                                 </p>
                                 <p>
@@ -205,7 +228,6 @@ const Dashboard = () => {
                                   <small className="text-muted">Vehicle</small>{" "}
                                   <br />
                                   <select
-                                
                                     className="form-control text-muted"
                                     required
                                   >
@@ -242,13 +264,13 @@ const Dashboard = () => {
                                     Phone Number
                                   </small>{" "}
                                   <br />
-                                  <div>
+                                  <small>
                                     <input
                                       type="number"
                                       className="form-control"
                                       name="phone"
                                     />
-                                  </div>
+                                  </small>
                                 </p>
                                 <p>
                                   <small className="text-muted">Address</small>
@@ -293,6 +315,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {}
     </div>
   );
 };
