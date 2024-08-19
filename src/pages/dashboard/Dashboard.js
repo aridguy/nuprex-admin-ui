@@ -7,6 +7,8 @@ import { IoMdArrowBack } from "react-icons/io";
 import Aos from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS
 import Swal from "sweetalert2";
+import TableHead from "./tables/TableHead";
+import Table from "./tables/Table";
 
 const Dashboard = () => {
   // innitiating animation
@@ -16,6 +18,7 @@ const Dashboard = () => {
   // initial states / dashboard visible by default
   const [dashboardHome, setDashboardHome] = useState(true);
   const [dashboardRider, setDashboardRider] = useState(false);
+  const [dashboardAdmin, setDashboardAdmin] = useState(false);
 
   // THE RIDERS SCREEN RIDERS CODE GENERATE
   const [riderCode, setRiderCode] = useState("");
@@ -44,13 +47,28 @@ const Dashboard = () => {
   const backToDashboard = () => {
     setDashboardHome(true);
     setDashboardRider(false);
+    setDashboardAdmin(false);
   };
   // open create new rider
   const openCreateRider = () => {
     setDashboardHome(false);
     setDashboardRider(true);
+    setDashboardAdmin(false);
+  };
+  const openCreateAdmin = () => {
+    setDashboardHome(false);
+    setDashboardRider(false);
+    setDashboardAdmin(true);
   };
 
+  const createAdminButton = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Good job!",
+      html: "Adekanmi Zainab has been <br /> created as an Admin Successfully!",
+      icon: "success",
+    });
+  };
   return (
     <div>
       <div className="container-fluid">
@@ -146,17 +164,35 @@ const Dashboard = () => {
                 <div className="row mt-3">
                   <div>
                     <button
+                      data-aos="fade-right"
                       onClick={openCreateRider}
                       className="brand-background border text-white rider_admin_btn"
                     >
                       <GoPlus />
                       Add a Rider
                     </button>
-                    <button className="mx-2 brand-background border text-white rider_admin_btn">
+                    <button
+                      data-aos="fade-right"
+                      onClick={openCreateAdmin}
+                      className="mx-2 brand-background border text-white rider_admin_btn"
+                    >
                       <GoPlus />
                       Add an Admin
                     </button>
                   </div>
+                </div>
+                {/* the table navigation bar */}
+                <div className=" mt-3">
+                  <div className="noti_bg">
+                    <small className="noti_text">Workbench</small>{" "}
+                    <small className="noti_text px-4">Notification</small>
+                    <button className="border viewAllBtn text-white float-end">
+                      View All
+                    </button>
+                  </div>
+
+                  <TableHead />
+                  <Table />
                 </div>
               </div>
             )}
@@ -303,6 +339,87 @@ const Dashboard = () => {
                                 </button>
                               </div>
                               <div className="col-md-2"></div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/*ADD ADMIN SCREEN*/}
+            {dashboardAdmin && (
+              <div className="container mt-3">
+                <div className="row">
+                  <div className="col-md-12">
+                    <div>
+                      <small>Add New Admin</small>
+                      <small
+                        onClick={backToDashboard}
+                        className="float-end cursor backAddRiderBtn"
+                      >
+                        <IoMdArrowBack /> Back
+                      </small>
+                    </div>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="riders_form_bg mt-2">
+                      <div
+                        className="form_box"
+                        data-aos="fade-right"
+                        data-aos-delay="600"
+                      >
+                        <form className="">
+                          <div className="container">
+                            <div className="row">
+                              <div className="col-md-4"></div>
+                              <div className="col-md-4 mt-4">
+                                <p>
+                                  <small className="text-muted">
+                                    Email Address
+                                  </small>
+                                  <input
+                                    className="form-control"
+                                    type="email"
+                                    required
+                                    name="email"
+                                  />
+                                </p>
+                                <p>
+                                  <small className="text-muted">Name</small>
+                                  <input
+                                    className="form-control"
+                                    type="text"
+                                    required
+                                    name="name"
+                                  />
+                                </p>
+                                <p>
+                                  <small className="text-muted">Role</small>{" "}
+                                  <br />
+                                  <select
+                                    className="form-control text-muted"
+                                    required
+                                  >
+                                    <option value="Male disabled">
+                                      Choose Role
+                                    </option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Super Admin">
+                                      Super Admin
+                                    </option>
+                                  </select>
+                                </p>
+                                <button
+                                  onClick={createAdminButton}
+                                  className="btn btn-primary block full-width"
+                                >
+                                  {" "}
+                                  <GoPlus /> Add User
+                                </button>
+                              </div>
+                              <div className="col-md-4"></div>
                             </div>
                           </div>
                         </form>
