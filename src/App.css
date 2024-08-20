@@ -7,13 +7,22 @@
 }
 
 /* UTILITIES STARTS FROM HERE */
-.viewAllBtn{
+.viewAllBtn {
   background-color: #ff6600;
   border: none;
   outline: none;
 }
 .brand {
   color: #014e9a;
+}
+link, a{
+  text-decoration: none;
+  color: white;
+}
+link, a:focus{
+  color: white;
+  text-decoration: none;
+  
 }
 .brand-background {
   background-color: #4169e1;
@@ -100,8 +109,7 @@ select {
 }
 
 /* DASBOARD STYLES STARTS FROM HERE */
-.dashboard_route_hover:hover,
-.dashboard_route_hover:focus {
+.dashboard_route_hover:hover {
   background: linear-gradient(
     90deg,
     rgba(255, 102, 0, 1) 0%,
@@ -110,7 +118,7 @@ select {
   );
   border-left: 3px solid white;
 }
-.logout_toggler{
+.logout_toggler {
   position: absolute;
   background-color: #ffffff;
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
@@ -120,15 +128,15 @@ select {
   right: 1em;
   /* top: 2.7em; */
 }
-.move-profile{
+.move-profile {
   position: relative;
   top: 8px;
 }
-.move-logout{
+.move-logout {
   position: relative;
   bottom: 11px;
 }
-.leads{
+.leads {
   position: relative;
   top: 7px;
 }
@@ -142,7 +150,7 @@ select {
   padding: 2.7em;
   z-index: 0;
 }
-.backAddRiderBtn{
+.backAddRiderBtn {
   background-color: rgba(0, 0, 0, 0.11);
   padding: 5px;
   border-radius: 50px;
@@ -155,32 +163,31 @@ select {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #E0F7E9; /* Light green background */
+  background-color: #e0f7e9; /* Light green background */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .check-icon {
-  color: #28A745; /* Green color */
+  color: #28a745; /* Green color */
   font-size: 50px;
 }
 
-.rider_admin_btn{
+.rider_admin_btn {
   width: 182px;
   height: 47px;
   border-radius: 4px;
-
 }
 
-.riders_form_bg{
+.riders_form_bg {
   background-color: white;
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
   min-height: 75vh;
 }
 
 /* dashboard table notification header */
-.noti_bg{
+.noti_bg {
   background-color: white;
   padding: 10px;
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.062);
@@ -189,13 +196,11 @@ select {
   border-bottom: 1px solid rgba(128, 128, 128, 0.322);
 }
 
-.noti_text{
+.noti_text {
   color: black;
 }
 
-.noti_text:hover{
+.noti_text:hover {
   color: #ff6600;
   cursor: pointer;
-  
 }
-

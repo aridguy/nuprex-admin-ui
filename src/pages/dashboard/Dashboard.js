@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidenav from "../../components/sidenav/Sidenav";
+// import Sidenav from "../../components/sidenav/Sidenav";
 import Navbar from "../../components/navbar/Navbar";
 import { FaCheckCircle } from "react-icons/fa"; // Importing an icon from react-icons
 import { GoPlus } from "react-icons/go";
@@ -9,6 +9,7 @@ import "aos/dist/aos.css"; // Import the CSS file for AOS
 import Swal from "sweetalert2";
 import TableHead from "./tables/TableHead";
 import Table from "./tables/Table";
+import Sidenav from "../../components/sidenav/Sidenav";
 
 const Dashboard = () => {
   // innitiating animation
@@ -73,9 +74,8 @@ const Dashboard = () => {
     <div>
       <div className="container-fluid">
         <div className="row no-gutters full-height ">
-          <div className="col-md-2 p-0 ">
-            <Sidenav />
-          </div>
+      <Sidenav />
+          <div className="col-md-2 p-0 "></div>
           <div className="col-md-10 p-0 dashboard-bg full-height">
             <Navbar />
             {/*DASHBOARD HOME SCREEN*/}
@@ -196,7 +196,6 @@ const Dashboard = () => {
                 </div>
               </div>
             )}
-
             {/*ADD RIDERS SCREEN*/}
             {dashboardRider && (
               <div className="container mt-3">

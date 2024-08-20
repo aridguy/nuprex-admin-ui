@@ -9,27 +9,35 @@ import Login from "./pages/auth/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Reset from "./pages/auth/reset/Reset";
 
+import Riders from "./pages/riders/Riders";
+import Orders from "./pages/orders/Orders";
+import Customer from "./pages/customer/Customer";
+import Admin from "./pages/admin/Admin";
+import Chat from "./pages/chat/Chat";
+
 const App = () => {
   return (
     <Router>
-      <Routes>
-        {/* Root route defaults to the Login page */}
-        <Route path="/" element={<Login />} />
-        <Route path="reset" element={<Reset />} />
+      <div>
+        <Routes>
+          {/* Root route defaults to the Login page */}
+          <Route path="/" element={<Login />} />
+          <Route path="/reset" element={<Reset />} />
 
-        {/* Dashboard Routes */}
-        <Route path="/dashboard/home" element={<Dashboard />} />
+          {/* Dashboard Routes */}
+          <Route path="/dashboard/home" element={<Dashboard />} />
+          <Route path="/riders" element={<Riders />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/customer" element={<Customer/>} />
 
-        {/* Catch-all route redirects unknown paths to login */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          {/* Catch-all route redirects unknown paths to login */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
 
 export default App;
-// <Route path="/dashboard/orders" element={<Orders />} />
-// <Route path="/dashboard/riders" element={<Riders />} />
-// <Route path="/dashboard/customers" element={<Customers />} />
-// <Route path="/dashboard/admin" element={<Admin />} />
-// <Route path="/dashboard/chat" element={<Chat />} />
