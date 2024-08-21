@@ -14,6 +14,8 @@ import Orders from "./pages/orders/Orders";
 import Customer from "./pages/customer/Customer";
 import Admin from "./pages/admin/Admin";
 import Chat from "./pages/chat/Chat";
+import Workbench from "./pages/dashboard/Workbench";
+import NotiTable from "./pages/dashboard/Notification/NotiTable";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
 
           {/* Dashboard Routes */}
           <Route path="/dashboard/home" element={<Dashboard />} />
+          <Route path="/workbench" element={<Workbench />} />
+          <Route path="/notification" element={<NotiTable />} />
           <Route path="/riders" element={<Riders />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/chat" element={<Chat />} />
