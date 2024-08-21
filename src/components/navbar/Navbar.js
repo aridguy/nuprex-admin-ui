@@ -12,7 +12,7 @@ const Navbar = () => {
   }, []);
   // default states
   const [profileInfo, setProfileInfo] = useState(false);
-  const toggleLogout = () =>  setProfileInfo(prevState => !prevState);
+  const toggleLogout = () => setProfileInfo((prevState) => !prevState);
   return (
     <div className="container bg-white navbar px-3">
       <div className="search_wrap">
@@ -27,6 +27,7 @@ const Navbar = () => {
         <div className="d-flex gap-4">
           <div>
             <MdOutlineNotificationAdd className="cursor notification" />
+            <span className="badge">•</span>
           </div>
           <div>
             <img
@@ -44,12 +45,13 @@ const Navbar = () => {
                 <div className="logout_toggler px-3">
                   <small className="lead cursor move-profile">Profile</small>
                   <hr />
-                  <small className="lead cursor text-danger move-logout">Logout</small>
+                  <small className="lead cursor text-danger move-logout">
+                    Logout
+                  </small>
                 </div>
               </div>
             )}
           </div>
-          
         </div>
       </div>
     </div>
